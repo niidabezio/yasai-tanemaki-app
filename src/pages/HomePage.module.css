@@ -1,0 +1,267 @@
+.page {
+  padding: 16px 0 40px;
+}
+
+/* イラストバナー */
+.illustrationBanner {
+  width: 100%;
+  max-height: 220px;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.illustrationBanner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ヒーロー */
+.hero {
+  background: linear-gradient(135deg, #1b5e20, #2d6a2d, #388e3c);
+  color: white;
+  padding: 16px 20px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.heroLeft {
+  flex-shrink: 0;
+}
+
+.heroMonth {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.heroSub {
+  font-size: 13px;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+.monthTabs {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.monthTab {
+  width: 34px;
+  height: 34px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.monthTab:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.monthTab.activeMonth {
+  background: white;
+  color: #1b5e20;
+  border-color: white;
+}
+
+.monthTab.todayMonth {
+  border-color: #ffeb3b;
+}
+
+/* 全体を表示ボタン */
+.showAllBtn {
+  padding: 7px 14px;
+  border: 2px solid #2d6a2d;
+  border-radius: 20px;
+  background: white;
+  color: #2d6a2d;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.showAllBtn:hover {
+  background: #e8f5e9;
+}
+
+/* サマリーバッジ */
+.summary {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.summaryBadge {
+  padding: 7px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 20px;
+  background: white;
+  color: #444;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.summaryBadge:hover {
+  border-color: var(--badge-color, #2d6a2d);
+  color: var(--badge-color, #2d6a2d);
+}
+
+.summaryBadge.activeBadge {
+  background: var(--badge-color, #2d6a2d);
+  border-color: var(--badge-color, #2d6a2d);
+  color: white;
+}
+
+/* フィルター */
+.filters {
+  margin-bottom: 10px;
+}
+
+.search {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #c8e6c9;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+}
+
+.search:focus {
+  border-color: #2d6a2d;
+}
+
+.categoryTabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.classificationTabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.classificationTab {
+  padding: 6px 12px;
+  border: 2px solid var(--classification-color, #2d6a2d);
+  border-radius: 16px;
+  background: #fafdf8;
+  color: var(--classification-color, #2d6a2d);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.classificationTab:hover {
+  background: #f1f8e9;
+}
+
+.classificationTab.activeClassificationTab {
+  background: var(--classification-color, #2d6a2d);
+  border-color: var(--classification-color, #2d6a2d);
+  color: white;
+}
+
+.catTab {
+  padding: 5px 12px;
+  border: 2px solid #c8e6c9;
+  border-radius: 16px;
+  background: white;
+  color: #333;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.catTab:hover {
+  background: #e8f5e9;
+}
+
+.catTab.activeTab {
+  background: #2d6a2d;
+  color: white;
+  border-color: #2d6a2d;
+}
+
+/* 結果 */
+.resultCount {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+/* 参考サイト */
+.refSection {
+  border-top: 2px solid #e8f5e9;
+  padding-top: 20px;
+}
+
+.refTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1b5e20;
+  margin-bottom: 10px;
+}
+
+.linkGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 8px;
+}
+
+.linkCard {
+  display: block;
+  padding: 10px 14px;
+  background: white;
+  border: 1px solid #c8e6c9;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #1b5e20;
+  font-size: 13px;
+  transition: all 0.15s;
+}
+
+.linkCard:hover {
+  background: #e8f5e9;
+  border-color: #2d6a2d;
+}

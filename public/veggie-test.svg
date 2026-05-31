@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200" role="img" aria-labelledby="title desc">
+  <title id="title">ニンジン</title>
+  <desc id="desc">A simple carrot with an orange triangular root, green leaves, and a Japanese label.</desc>
+  <rect width="800" height="200" fill="#ffffff"/>
+  <g transform="translate(400 18)">
+    <line x1="0" y1="42" x2="-54" y2="0" stroke="#2f8f3a" stroke-width="8" stroke-linecap="round"/>
+    <line x1="0" y1="42" x2="-28" y2="-8" stroke="#45a447" stroke-width="8" stroke-linecap="round"/>
+    <line x1="0" y1="42" x2="0" y2="-12" stroke="#2f8f3a" stroke-width="8" stroke-linecap="round"/>
+    <line x1="0" y1="42" x2="28" y2="-8" stroke="#45a447" stroke-width="8" stroke-linecap="round"/>
+    <line x1="0" y1="42" x2="54" y2="0" stroke="#2f8f3a" stroke-width="8" stroke-linecap="round"/>
+    <polygon points="-46,42 46,42 0,138" fill="#f28c28" stroke="#d66f15" stroke-width="4" stroke-linejoin="round"/>
+    <line x1="-23" y1="68" x2="-6" y2="62" stroke="#d66f15" stroke-width="3" stroke-linecap="round"/>
+    <line x1="12" y1="86" x2="30" y2="80" stroke="#d66f15" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-11" y1="111" x2="7" y2="105" stroke="#d66f15" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <text x="400" y="184" text-anchor="middle" font-family="'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Noto Sans JP', sans-serif" font-size="32" font-weight="700" fill="#333333">ニンジン</text>
+</svg>

@@ -1,0 +1,279 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" font-family="'Hiragino Sans', 'Meiryo', sans-serif">
+  <defs>
+    <!-- Sky gradient -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#87CEEB"/>
+      <stop offset="100%" stop-color="#E0F4FF"/>
+    </linearGradient>
+    <!-- Ground gradient -->
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5DB85D"/>
+      <stop offset="100%" stop-color="#3A8A3A"/>
+    </linearGradient>
+    <!-- Tomato gradient -->
+    <radialGradient id="tomatoGrad" cx="40%" cy="35%">
+      <stop offset="0%" stop-color="#FF6B6B"/>
+      <stop offset="100%" stop-color="#CC1F1F"/>
+    </radialGradient>
+    <!-- Cucumber gradient -->
+    <linearGradient id="cucumberGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6DBF6D"/>
+      <stop offset="50%" stop-color="#4CAF50"/>
+      <stop offset="100%" stop-color="#2E7D32"/>
+    </linearGradient>
+    <!-- Eggplant gradient -->
+    <radialGradient id="eggplantGrad" cx="40%" cy="30%">
+      <stop offset="0%" stop-color="#9C6BBF"/>
+      <stop offset="100%" stop-color="#4A148C"/>
+    </radialGradient>
+    <!-- Carrot gradient -->
+    <linearGradient id="carrotGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF9A3C"/>
+      <stop offset="100%" stop-color="#E65100"/>
+    </linearGradient>
+    <!-- Daikon gradient -->
+    <linearGradient id="daikonGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E0E0E0"/>
+    </linearGradient>
+    <!-- Cabbage gradient -->
+    <radialGradient id="cabbageGrad" cx="50%" cy="45%">
+      <stop offset="0%" stop-color="#C8E6C9"/>
+      <stop offset="100%" stop-color="#388E3C"/>
+    </radialGradient>
+    <!-- Strawberry gradient -->
+    <radialGradient id="strawGrad" cx="40%" cy="30%">
+      <stop offset="0%" stop-color="#FF6B8A"/>
+      <stop offset="100%" stop-color="#C62828"/>
+    </radialGradient>
+    <!-- Sun gradient -->
+    <radialGradient id="sunGrad" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#FFEE58"/>
+      <stop offset="100%" stop-color="#FFA000"/>
+    </radialGradient>
+    <!-- Drop shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#00000033"/>
+    </filter>
+  </defs>
+
+  <!-- Background sky -->
+  <rect width="800" height="420" fill="url(#sky)"/>
+
+  <!-- Clouds -->
+  <g opacity="0.85">
+    <ellipse cx="120" cy="60" rx="50" ry="22" fill="white"/>
+    <ellipse cx="155" cy="50" rx="38" ry="26" fill="white"/>
+    <ellipse cx="90" cy="55" rx="32" ry="18" fill="white"/>
+
+    <ellipse cx="600" cy="45" rx="45" ry="20" fill="white"/>
+    <ellipse cx="635" cy="35" rx="35" ry="24" fill="white"/>
+    <ellipse cx="570" cy="50" rx="30" ry="16" fill="white"/>
+  </g>
+
+  <!-- Sun -->
+  <g filter="url(#shadow)">
+    <circle cx="720" cy="70" r="38" fill="url(#sunGrad)"/>
+    <!-- Sun rays -->
+    <g stroke="#FFCC02" stroke-width="3" stroke-linecap="round">
+      <line x1="720" y1="22" x2="720" y2="14"/>
+      <line x1="720" y1="118" x2="720" y2="126"/>
+      <line x1="672" y1="70" x2="664" y2="70"/>
+      <line x1="768" y1="70" x2="776" y2="70"/>
+      <line x1="686" y1="36" x2="680" y2="30"/>
+      <line x1="754" y1="36" x2="760" y2="30"/>
+      <line x1="686" y1="104" x2="680" y2="110"/>
+      <line x1="754" y1="104" x2="760" y2="110"/>
+    </g>
+    <!-- Sun face -->
+    <circle cx="712" cy="65" r="4" fill="#E65100"/>
+    <circle cx="728" cy="65" r="4" fill="#E65100"/>
+    <path d="M710 78 Q720 86 730 78" stroke="#E65100" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Ground -->
+  <rect x="0" y="310" width="800" height="110" fill="url(#ground)"/>
+
+  <!-- Grass tufts -->
+  <g fill="#2E7D32">
+    <path d="M30 310 Q35 295 40 310"/>
+    <path d="M38 310 Q43 290 48 310"/>
+    <path d="M46 310 Q51 298 56 310"/>
+    <path d="M150 310 Q155 292 160 310"/>
+    <path d="M158 310 Q163 285 168 310"/>
+    <path d="M300 310 Q305 293 310 310"/>
+    <path d="M308 310 Q313 287 318 310"/>
+    <path d="M450 310 Q455 294 460 310"/>
+    <path d="M600 310 Q605 291 610 310"/>
+    <path d="M608 310 Q613 286 618 310"/>
+    <path d="M720 310 Q725 293 730 310"/>
+    <path d="M728 310 Q733 289 738 310"/>
+  </g>
+
+  <!-- Dirt/soil texture lines -->
+  <g stroke="#2E6B2E" stroke-width="1" opacity="0.4">
+    <path d="M0 340 Q200 335 400 342 Q600 348 800 340"/>
+    <path d="M0 365 Q200 358 400 365 Q600 372 800 365"/>
+  </g>
+
+  <!-- ====== VEGETABLES ====== -->
+
+  <!-- 1. トマト (Tomato) - x=80 -->
+  <g filter="url(#shadow)" transform="translate(80,180)">
+    <!-- Stem -->
+    <line x1="0" y1="-5" x2="0" y2="-28" stroke="#2E7D32" stroke-width="4" stroke-linecap="round"/>
+    <!-- Leaves -->
+    <path d="M0 -20 Q-18 -38 -8 -45 Q0 -35 0 -20" fill="#388E3C"/>
+    <path d="M0 -20 Q18 -38 8 -45 Q0 -35 0 -20" fill="#43A047"/>
+    <path d="M0 -24 Q-10 -42 -2 -48 Q4 -38 0 -24" fill="#2E7D32"/>
+    <!-- Body -->
+    <circle cx="0" cy="20" r="42" fill="url(#tomatoGrad)"/>
+    <!-- Shine -->
+    <ellipse cx="-12" cy="5" rx="10" ry="8" fill="white" opacity="0.3" transform="rotate(-25,-12,5)"/>
+    <!-- Ridges -->
+    <path d="M-38 22 Q-20 10 0 22 Q20 10 38 22" stroke="#B71C1C" stroke-width="1.5" fill="none" opacity="0.4"/>
+  </g>
+  <text x="80" y="370" text-anchor="middle" font-size="15" font-weight="bold" fill="#1B5E20">トマト</text>
+
+  <!-- 2. キュウリ (Cucumber) - x=195 -->
+  <g filter="url(#shadow)" transform="translate(195,200) rotate(-15)">
+    <!-- Body -->
+    <rect x="-18" y="-70" width="36" height="110" rx="18" fill="url(#cucumberGrad)"/>
+    <!-- Stripes -->
+    <g stroke="#2E7D32" stroke-width="1.5" opacity="0.5">
+      <line x1="-10" y1="-70" x2="-10" y2="40"/>
+      <line x1="0" y1="-70" x2="0" y2="40"/>
+      <line x1="10" y1="-70" x2="10" y2="40"/>
+    </g>
+    <!-- Stem tip -->
+    <ellipse cx="0" cy="-72" rx="8" ry="5" fill="#8BC34A"/>
+    <line x1="0" y1="-77" x2="4" y2="-90" stroke="#558B2F" stroke-width="3" stroke-linecap="round"/>
+    <!-- Shine -->
+    <ellipse cx="-6" cy="-30" rx="5" ry="18" fill="white" opacity="0.25" transform="rotate(5,-6,-30)"/>
+  </g>
+  <text x="195" y="370" text-anchor="middle" font-size="15" font-weight="bold" fill="#1B5E20">キュウリ</text>
+
+  <!-- 3. ナス (Eggplant) - x=310 -->
+  <g filter="url(#shadow)" transform="translate(310,195)">
+    <!-- Stem + calyx -->
+    <line x1="5" y1="-15" x2="10" y2="-42" stroke="#2E7D32" stroke-width="4" stroke-linecap="round"/>
+    <path d="M5 -15 Q-12 -28 -6 -38 Q4 -30 5 -15" fill="#388E3C"/>
+    <path d="M5 -15 Q20 -30 16 -42 Q6 -32 5 -15" fill="#43A047"/>
+    <!-- Body -->
+    <ellipse cx="0" cy="25" rx="32" ry="48" fill="url(#eggplantGrad)"/>
+    <!-- Shine -->
+    <ellipse cx="-10" cy="5" rx="8" ry="16" fill="white" opacity="0.25" transform="rotate(-15,-10,5)"/>
+    <!-- Bottom tip -->
+    <ellipse cx="0" cy="72" rx="10" ry="6" fill="#4A148C"/>
+  </g>
+  <text x="310" y="370" text-anchor="middle" font-size="15" font-weight="bold" fill="#1B5E20">ナス</text>
+
+  <!-- 4. ニンジン (Carrot) - x=425 -->
+  <g filter="url(#shadow)" transform="translate(425,185)">
+    <!-- Leaves -->
+    <path d="M0 -15 Q-20 -55 -8 -72 Q0 -48 0 -15" fill="#4CAF50"/>
+    <path d="M0 -15 Q20 -55 8 -72 Q0 -48 0 -15" fill="#66BB6A"/>
+    <path d="M0 -15 Q-30 -45 -20 -65 Q-8 -46 0 -15" fill="#388E3C"/>
+    <path d="M0 -15 Q30 -45 20 -65 Q8 -46 0 -15" fill="#43A047"/>
+    <path d="M0 -18 Q0 -60 0 -75 Q4 -55 0 -18" fill="#2E7D32"/>
+    <!-- Body (tapered) -->
+    <path d="M-24 -10 Q-26 20 0 90 Q26 20 24 -10 Q0 -18 -24 -10Z" fill="url(#carrotGrad)"/>
+    <!-- Rings -->
+    <g stroke="#E65100" stroke-width="1" fill="none" opacity="0.4">
+      <path d="M-20 10 Q0 5 20 10"/>
+      <path d="M-18 28 Q0 23 18 28"/>
+      <path d="M-14 46 Q0 41 14 46"/>
+      <path d="M-8 64 Q0 59 8 64"/>
+    </g>
+    <!-- Shine -->
+    <ellipse cx="-8" cy="25" rx="5" ry="20" fill="white" opacity="0.25" transform="rotate(-5,-8,25)"/>
+  </g>
+  <text x="425" y="370" text-anchor="middle" font-size="15" font-weight="bold" fill="#1B5E20">ニンジン</text>
+
+  <!-- 5. ダイコン (Daikon) - x=535 -->
+  <g filter="url(#shadow)" transform="translate(535,185)">
+    <!-- Leaves -->
+    <path d="M-4 -12 Q-28 -50 -16 -70 Q-6 -48 -4 -12" fill="#4CAF50"/>
+    <path d="M4 -12 Q28 -50 16 -70 Q6 -48 4 -12" fill="#66BB6A"/>
+    <path d="M-8 -14 Q-38 -40 -28 -62 Q-12 -44 -8 -14" fill="#388E3C"/>
+    <path d="M8 -14 Q38 -40 28 -62 Q12 -44 8 -14" fill="#43A047"/>
+    <path d="M0 -15 Q-10 -55 0 -72 Q10 -55 0 -15" fill="#2E7D32"/>
+    <!-- Body (thick cylinder tapering) -->
+    <path d="M-26 -8 L-28 45 Q-15 85 0 95 Q15 85 28 45 L26 -8 Q0 -16 -26 -8Z" fill="url(#daikonGrad)"/>
+    <!-- Outline -->
+    <path d="M-26 -8 L-28 45 Q-15 85 0 95 Q15 85 28 45 L26 -8 Q0 -16 -26 -8Z" fill="none" stroke="#BDBDBD" stroke-width="1.5"/>
+    <!-- Root hairs -->
+    <g stroke="#E0E0E0" stroke-width="1.5" stroke-linecap="round">
+      <line x1="-18" y1="60" x2="-26" y2="68"/>
+      <line x1="0" y1="80" x2="-5" y2="90"/>
+      <line x1="18" y1="60" x2="26" y2="68"/>
+    </g>
+    <!-- Shine -->
+    <ellipse cx="-10" cy="25" rx="6" ry="25" fill="white" opacity="0.4"/>
+  </g>
+  <text x="535" y="370" text-anchor="middle" font-size="15" font-weight="bold" fill="#1B5E20">ダイコン</text>
+
+  <!-- 6. キャベツ (Cabbage) - x=648 -->
+  <g filter="url(#shadow)" transform="translate(648,230)">
+    <!-- Outer leaves -->
+    <ellipse cx="0" cy="0" rx="52" ry="44" fill="#2E7D32"/>
+    <ellipse cx="-30" cy="-10" rx="25" ry="32" fill="#388E3C" transform="rotate(-30,-30,-10)"/>
+    <ellipse cx="30" cy="-10" rx="25" ry="32" fill="#43A047" transform="rotate(30,30,-10)"/>
+    <!-- Mid leaves -->
+    <ellipse cx="0" cy="5" rx="42" ry="36" fill="#66BB6A"/>
+    <ellipse cx="-20" cy="0" rx="22" ry="28" fill="#81C784" transform="rotate(-20,-20,0)"/>
+    <ellipse cx="20" cy="0" rx="22" ry="28" fill="#A5D6A7" transform="rotate(20,20,0)"/>
+    <!-- Inner -->
+    <ellipse cx="0" cy="8" rx="30" ry="26" fill="#C8E6C9"/>
+    <ellipse cx="0" cy="10" rx="18" ry="16" fill="#E8F5E9"/>
+    <!-- Leaf veins -->
+    <g stroke="#4CAF50" stroke-width="1" fill="none" opacity="0.6">
+      <path d="M0 -20 Q-10 0 -5 20"/>
+      <path d="M0 -20 Q10 0 5 20"/>
+      <path d="M-15 -10 Q-8 5 -12 18"/>
+      <path d="M15 -10 Q8 5 12 18"/>
+    </g>
+    <!-- Bottom flat base -->
+    <ellipse cx="0" cy="42" rx="30" ry="8" fill="#1B5E20"/>
+  </g>
+  <text x="648" y="370" text-anchor="middle" font-size="15" font-weight="bold" fill="#1B5E20">キャベツ</text>
+
+  <!-- 7. イチゴ (Strawberry) - x=755 -->
+  <g filter="url(#shadow)" transform="translate(755,195)">
+    <!-- Calyx leaves -->
+    <path d="M0 -5 Q-18 -28 -6 -38 Q0 -22 0 -5" fill="#2E7D32"/>
+    <path d="M0 -5 Q18 -28 6 -38 Q0 -22 0 -5" fill="#388E3C"/>
+    <path d="M0 -8 Q-24 -20 -18 -34 Q-8 -22 0 -8" fill="#43A047"/>
+    <path d="M0 -8 Q24 -20 18 -34 Q8 -22 0 -8" fill="#4CAF50"/>
+    <path d="M0 -10 Q0 -35 0 -40 Q4 -28 0 -10" fill="#388E3C"/>
+    <!-- Body -->
+    <path d="M-36 0 Q-38 30 0 72 Q38 30 36 0 Q18 -12 0 -12 Q-18 -12 -36 0Z" fill="url(#strawGrad)"/>
+    <!-- Seeds -->
+    <g fill="#FFEE58" font-size="7">
+      <ellipse cx="-18" cy="15" rx="3" ry="4" transform="rotate(-10,-18,15)"/>
+      <ellipse cx="0" cy="10" rx="3" ry="4"/>
+      <ellipse cx="18" cy="15" rx="3" ry="4" transform="rotate(10,18,15)"/>
+      <ellipse cx="-22" cy="32" rx="3" ry="4" transform="rotate(-5,-22,32)"/>
+      <ellipse cx="-8" cy="28" rx="3" ry="4"/>
+      <ellipse cx="8" cy="28" rx="3" ry="4"/>
+      <ellipse cx="22" cy="32" rx="3" ry="4" transform="rotate(5,22,32)"/>
+      <ellipse cx="-14" cy="48" rx="3" ry="4"/>
+      <ellipse cx="2" cy="46" rx="3" ry="4"/>
+      <ellipse cx="14" cy="48" rx="3" ry="4"/>
+    </g>
+    <!-- Shine -->
+    <ellipse cx="-12" cy="15" rx="8" ry="14" fill="white" opacity="0.22" transform="rotate(-15,-12,15)"/>
+  </g>
+  <text x="755" y="370" text-anchor="middle" font-size="15" font-weight="bold" fill="#1B5E20">イチゴ</text>
+
+  <!-- Title banner -->
+  <rect x="220" y="12" width="360" height="44" rx="22" fill="#2E7D32" opacity="0.88"/>
+  <text x="400" y="41" text-anchor="middle" font-size="20" font-weight="bold" fill="white">🌱 野菜栽培カレンダー</text>
+
+  <!-- Decorative stars -->
+  <g fill="#FFEE58" opacity="0.8">
+    <polygon points="200,80 203,90 213,90 205,96 208,106 200,100 192,106 195,96 187,90 197,90" transform="scale(0.6) translate(120,80)"/>
+    <polygon points="200,80 203,90 213,90 205,96 208,106 200,100 192,106 195,96 187,90 197,90" transform="scale(0.5) translate(480,100)"/>
+    <polygon points="200,80 203,90 213,90 205,96 208,106 200,100 192,106 195,96 187,90 197,90" transform="scale(0.4) translate(280,260)"/>
+  </g>
+</svg>

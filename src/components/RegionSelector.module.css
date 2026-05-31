@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 6px 14px;
+  border: 2px solid #2d6a2d;
+  border-radius: 20px;
+  background: white;
+  color: #2d6a2d;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.btn:hover {
+  background: #e8f5e9;
+}
+
+.btn.active {
+  background: #2d6a2d;
+  color: white;
+}

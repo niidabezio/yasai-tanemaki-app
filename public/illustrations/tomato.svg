@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title desc">
+  <title id="title">かわいいトマトのイラスト</title>
+  <desc id="desc">赤く丸いトマトに緑のヘタと茎、白いツヤのハイライトを入れたシンプルなSVGイラスト。</desc>
+
+  <defs>
+    <radialGradient id="tomatoFill" cx="38%" cy="32%" r="70%">
+      <stop offset="0%" stop-color="#ff6b5f"/>
+      <stop offset="58%" stop-color="#f04438"/>
+      <stop offset="100%" stop-color="#cf2c27"/>
+    </radialGradient>
+    <linearGradient id="leafFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#68c95b"/>
+      <stop offset="100%" stop-color="#238a3a"/>
+    </linearGradient>
+  </defs>
+
+  <ellipse cx="103" cy="118" rx="58" ry="53" fill="#b82422" opacity="0.16"/>
+  <path
+    d="M42 107c0-36 25-65 58-65 35 0 62 28 62 65 0 38-27 70-61 70-33 0-59-32-59-70Z"
+    fill="url(#tomatoFill)"
+  />
+  <path
+    d="M52 119c6 31 27 50 51 50 21 0 40-16 49-41-9 31-28 49-51 49-26 0-46-22-49-58Z"
+    fill="#a91f1e"
+    opacity="0.24"
+  />
+  <path
+    d="M59 96c7-27 27-44 50-44 18 0 34 10 43 27-12-12-27-19-44-19-23 0-41 14-49 36Z"
+    fill="#ff8174"
+    opacity="0.34"
+  />
+
+  <path
+    d="M93 48c3-18 9-28 18-31 4 11 1 23-9 35Z"
+    fill="#2f9140"
+  />
+  <path
+    d="M101 53c-8-15-9-27-3-37 11 6 16 18 14 35Z"
+    fill="#43aa4e"
+  />
+  <path
+    d="M104 47c12-13 24-18 36-14-4 13-15 21-33 24Z"
+    fill="url(#leafFill)"
+  />
+  <path
+    d="M98 48c-13-12-26-15-38-10 6 12 18 19 35 20Z"
+    fill="url(#leafFill)"
+  />
+  <path
+    d="M99 53c-18-3-31 1-39 11 10 9 24 10 39 1Z"
+    fill="#329947"
+  />
+  <path
+    d="M104 53c18-3 31 2 38 12-11 8-25 8-39-1Z"
+    fill="#2f9140"
+  />
+  <path
+    d="M100 43c7 4 12 11 13 20-8 4-17 4-25 0 1-9 5-16 12-20Z"
+    fill="#238a3a"
+  />
+  <path
+    d="M101 26c4-8 11-13 20-14 3 11-1 21-13 30Z"
+    fill="none"
+    stroke="#2f7b33"
+    stroke-width="8"
+    stroke-linecap="round"
+  />
+
+  <ellipse cx="78" cy="88" rx="17" ry="10" fill="#ffffff" opacity="0.74" transform="rotate(-31 78 88)"/>
+  <circle cx="94" cy="76" r="5" fill="#ffffff" opacity="0.46"/>
+  <path
+    d="M72 134c9 13 22 20 37 20"
+    fill="none"
+    stroke="#ff7c70"
+    stroke-width="6"
+    stroke-linecap="round"
+    opacity="0.28"
+  />
+</svg>
