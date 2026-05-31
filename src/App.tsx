@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import { Region } from './types';
-import { RegionSelector } from './components/RegionSelector';
 import { CalendarPage } from './pages/CalendarPage';
 import { HomePage } from './pages/HomePage';
 import { VegetableDetailPage } from './pages/VegetableDetailPage';
@@ -28,16 +27,12 @@ function AppContent() {
               🌱 野菜 種まきカレンダー
             </NavLink>
           </div>
-          <div className={styles.regionWrap}>
-            <span className={styles.regionLabel}>地域:</span>
-            <RegionSelector region={region} onChange={handleRegionChange} />
-          </div>
         </div>
       </header>
 
 <main className={styles.main}>
         <Routes>
-          <Route path="/" element={<HomePage region={region} />} />
+          <Route path="/" element={<HomePage region={region} onRegionChange={handleRegionChange} />} />
           <Route path="/calendar" element={<CalendarPage region={region} />} />
           <Route path="/vegetable/:id" element={<VegetableDetailPage region={region} />} />
         </Routes>

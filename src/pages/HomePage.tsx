@@ -1,26 +1,20 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Region, REGION_LABELS, VegetableCategory, CATEGORY_LABELS, VegetableClassification } from '../types';
+import { Region, REGION_LABELS } from '../types';
 import { vegetables, getVegetablesByMonth } from '../data/vegetables';
 import { VegetableCard } from '../components/VegetableCard';
 import { VegetableBanner } from '../components/VegetableBanner';
+import { RegionSelector } from '../components/RegionSelector';
 import styles from './HomePage.module.css';
 
 interface Props {
   region: Region;
+  onRegionChange: (r: Region) => void;
 }
 
 type SeasonFilter = 'all' | 'tanemaki';
-type ClassificationFilter = VegetableClassification | 'all';
 
 const MONTH_NAMES_JP = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
-
-const CLASSIFICATION_LABELS: { value: ClassificationFilter; label: string; color: string }[] = [
-  { value: 'all', label: 'すべて', color: '#2d6a2d' },
-  { value: '指定野菜', label: '🏅 指定野菜', color: '#1b5e20' },
-  { value: '特定野菜', label: '⭐ 特定野菜', color: '#558b2f' },
-  { value: 'その他', label: '🌿 その他', color: '#616161' },
-];
 
 const REFERENCE_SITES = [
   { name: 'タキイ種苗 栽培マニュアル', url: 'https://www.takii.co.jp/tsk/manual/' },
@@ -31,7 +25,7 @@ const REFERENCE_SITES = [
   { name: '小林種苗 種・苗一覧', url: 'https://www.kobayashi-seed.com/view/page/seed' },
 ];
 
-export function HomePage({ region }: Props) {
+export function HomePage({ region, onRegionChange }: Props) {
   const today = new Date();
   const currentMonth = today.getMonth() + 1;
   const [searchParams, setSearchParams] = useSearchParams();
@@ -44,8 +38,6 @@ export function HomePage({ region }: Props) {
     const s = searchParams.get('season');
     return s === 'tanemaki' ? 'tanemaki' : 'all';
   });
-  const [classificationFilter, setClassificationFilter] = useState<ClassificationFilter>('all');
-  const [categoryFilter, setCategoryFilter] = useState<VegetableCategory | 'all'>('all');
   const [search, setSearch] = useState('');
 
   useEffect(() => {
@@ -65,8 +57,6 @@ export function HomePage({ region }: Props) {
   const handleShowAll = () => {
     setSelectedMonth(currentMonth);
     setSeasonFilter('all');
-    setClassificationFilter('all');
-    setCategoryFilter('all');
     setSearch('');
     setSearchParams({});
   };
@@ -76,17 +66,12 @@ export function HomePage({ region }: Props) {
   // 種まき・定植の合算（重複除く）
   const tanemakiIds = new Set([...sowingIds, ...plantingIds]);
 
-  const CLASS_ORDER: Record<string, number> = { '指定野菜': 0, '特定野菜': 1, 'その他': 2 };
-
   const filtered = vegetables
     .filter(v => {
       if (seasonFilter === 'tanemaki' && !tanemakiIds.has(v.id)) return false;
-      if (classificationFilter !== 'all' && v.classification !== classificationFilter) return false;
-      if (categoryFilter !== 'all' && v.category !== categoryFilter) return false;
       if (search && !v.name.includes(search) && !v.nameRoma.toLowerCase().includes(search.toLowerCase())) return false;
       return true;
-    })
-    .sort((a, b) => CLASS_ORDER[a.classification] - CLASS_ORDER[b.classification]);
+    });
 
   function getHighlight(id: string): 'sowing' | 'planting' | undefined {
     if (sowingIds.has(id)) return 'sowing';
@@ -140,7 +125,7 @@ export function HomePage({ region }: Props) {
         </button>
       </div>
 
-      {/* 検索・フィルター */}
+      {/* 検索・地域フィルター */}
       <div className={styles.filters}>
         <input
           type="search"
@@ -149,34 +134,9 @@ export function HomePage({ region }: Props) {
           onChange={e => setSearch(e.target.value)}
           className={styles.search}
         />
-        <div className={styles.classificationTabs}>
-          {CLASSIFICATION_LABELS.map(item => (
-            <button
-              key={item.value}
-              className={`${styles.classificationTab} ${classificationFilter === item.value ? styles.activeClassificationTab : ''}`}
-              onClick={() => setClassificationFilter(item.value)}
-              style={{ '--classification-color': item.color } as React.CSSProperties}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
-        <div className={styles.categoryTabs}>
-          <button
-            className={`${styles.catTab} ${categoryFilter === 'all' ? styles.activeTab : ''}`}
-            onClick={() => setCategoryFilter('all')}
-          >
-            すべて
-          </button>
-          {CATEGORY_LABELS.map(cat => (
-            <button
-              key={cat}
-              className={`${styles.catTab} ${categoryFilter === cat ? styles.activeTab : ''}`}
-              onClick={() => setCategoryFilter(cat)}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className={styles.regionRow}>
+          <span className={styles.regionLabel}>地域:</span>
+          <RegionSelector region={region} onChange={onRegionChange} />
         </div>
       </div>
 

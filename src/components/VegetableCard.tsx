@@ -23,12 +23,6 @@ export function VegetableCard({ vegetable, region, highlight }: Props) {
     planting: '#fff8e1',
     harvest: '#fce4ec',
   };
-  const classificationBadge = vegetable.classification === '指定野菜'
-    ? { label: '指定', background: '#1b5e20' }
-    : vegetable.classification === '特定野菜'
-      ? { label: '特定', background: '#558b2f' }
-      : undefined;
-
   return (
     <Link
       to={`/vegetable/${vegetable.id}`}
@@ -51,24 +45,6 @@ export function VegetableCard({ vegetable, region, highlight }: Props) {
       </div>
       <div className={styles.cardBody}>
         <div className={styles.name}>{vegetable.name}</div>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4, flexWrap: 'wrap' }}>
-          <div className={styles.category}>{vegetable.category}</div>
-          {classificationBadge && (
-            <span
-              style={{
-                background: classificationBadge.background,
-                color: 'white',
-                borderRadius: 10,
-                padding: '2px 7px',
-                fontSize: 11,
-                fontWeight: 700,
-                lineHeight: 1.2,
-              }}
-            >
-              {classificationBadge.label}
-            </span>
-          )}
-        </div>
         {monthLabels.length > 0 && (
           <div className={styles.months}>
             {highlight === 'harvest' ? '収穫: ' : '種まき: '}
