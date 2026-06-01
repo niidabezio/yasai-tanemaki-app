@@ -5,7 +5,7 @@ export function VegetableBanner() {
   return (
     <div className={styles.banner}>
       <div className={styles.titleArea}>
-        <h1 className={styles.title}>野菜の種まきカレンダー</h1>
+        <h1 className={styles.title}>野菜の種まきカレンダー<span className={styles.tagline}>いつからでも始めれる野菜作り　by 農業物語</span></h1>
         <p className={styles.subtitle}>{vegetables.length}種類の野菜を育てよう</p>
       </div>
     </div>
