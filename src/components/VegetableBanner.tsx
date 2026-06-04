@@ -1,4 +1,3 @@
-import { vegetables } from '../data/vegetables';
 import styles from './VegetableBanner.module.css';
 
 export function VegetableBanner() {

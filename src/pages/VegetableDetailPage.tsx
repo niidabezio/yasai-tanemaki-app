@@ -18,6 +18,13 @@ function convertTo10a(text: string): string {
     .replace(/L\/m²/g, 't/10a');
 }
 
+const NO_BRAND_SEARCH = new Set([
+  'nozawana', 'shiroouri', 'hayatouri', 'udo', 'norabona',
+  'satoimo', 'wakegi', 'potato', 'sweet-potato', 'garlic',
+  'rakkyo', 'nagaimo', 'jinenjo', 'ginger', 'leaf-ginger',
+  'myoga', 'strawberry', 'fuki', 'warabi', 'taranoki',
+]);
+
 export function VegetableDetailPage({ region: _region }: Props) {
   const { id } = useParams<{ id: string }>();
   const veg = vegetables.find(v => v.id === id);
@@ -32,12 +39,6 @@ export function VegetableDetailPage({ region: _region }: Props) {
     );
   }
 
-  const classificationBadgeColor = veg.classification === '指定野菜'
-    ? '#1b5e20'
-    : veg.classification === '特定野菜'
-      ? '#558b2f'
-      : '#616161';
-
   const c = cultivationData[veg.id];
   const fmt = (text: string) => unit === '10a' ? convertTo10a(text) : text;
 
@@ -46,30 +47,19 @@ export function VegetableDetailPage({ region: _region }: Props) {
       <Link to="/" className={styles.back}>← 一覧に戻る</Link>
 
       <div className={styles.header}>
-        <div>
-          <h1 className={styles.name}>{veg.name}</h1>
-          <p className={styles.roma}>{veg.nameRoma}</p>
-          <div className={styles.meta}>
-            <span className={styles.categoryBadge}>{veg.category}</span>
-            <span
-              className={styles.categoryBadge}
-              style={{ background: classificationBadgeColor }}
-            >
-              {veg.classification}
-            </span>
-          </div>
-          {veg.daysToHarvest && (
-            <p className={styles.info}>⏱ {veg.daysToHarvest}</p>
-          )}
-          {veg.notes && (
-            <p className={styles.notes}>💡 {veg.notes}</p>
-          )}
-        </div>
+        <h1 className={styles.name}>{veg.name}</h1>
+        <a
+          href={`https://www.amazon.co.jp/s?k=${encodeURIComponent(veg.name + (NO_BRAND_SEARCH.has(veg.id) ? ' 種' : ' 種 タキイ サカタ トキタ ナント'))}&tag=loadofagricul-22`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.amazonTopBtn}
+        >
+          🛒 Amazonで{veg.name}の種を探す
+        </a>
       </div>
 
       {veg.image && (
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>📊 作型図・栽培のポイント</h2>
           <img
             src={`/${veg.image}`}
             alt={`${veg.name}の作型図`}
@@ -132,8 +122,12 @@ export function VegetableDetailPage({ region: _region }: Props) {
       )}
 
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>🔗 種を購入する</h2>
+        <h2 className={styles.sectionTitle}>🛒 種を購入する</h2>
         <div className={styles.buyLinks}>
+          <a href={`https://www.amazon.co.jp/s?k=${encodeURIComponent(veg.name + (NO_BRAND_SEARCH.has(veg.id) ? ' 種' : ' 種 タキイ サカタ トキタ ナント'))}&tag=loadofagricul-22`}
+            target="_blank" rel="noopener noreferrer" className={`${styles.buyLink} ${styles.amazonLink}`}>
+            🛒 Amazonで種を探す
+          </a>
           <a href={`https://www.takii.co.jp/CGI/tsk/shohin/search.cgi?keyword=${encodeURIComponent(veg.name)}`}
             target="_blank" rel="noopener noreferrer" className={styles.buyLink}>
             タキイ種苗で検索

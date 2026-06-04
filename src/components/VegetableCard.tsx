@@ -9,6 +9,14 @@ interface Props {
   highlight?: 'sowing' | 'planting' | 'harvest';
 }
 
+// 大手種苗会社が扱わないため会社名なしで検索する野菜
+const NO_BRAND_SEARCH = new Set([
+  'nozawana', 'shiroouri', 'hayatouri', 'udo', 'norabona',
+  'satoimo', 'wakegi', 'potato', 'sweet-potato', 'garlic',
+  'rakkyo', 'nagaimo', 'jinenjo', 'ginger', 'leaf-ginger',
+  'myoga', 'strawberry', 'fuki', 'warabi', 'taranoki',
+]);
+
 export function VegetableCard({ vegetable, region, highlight }: Props) {
   const schedule = vegetable.schedule[region];
   const sowingRanges = schedule.sowing ?? schedule.planting ?? [];
@@ -53,6 +61,15 @@ export function VegetableCard({ vegetable, region, highlight }: Props) {
               : monthLabels.join(', ')}
           </div>
         )}
+        <a
+          href={`https://www.amazon.co.jp/s?k=${encodeURIComponent(vegetable.name + (NO_BRAND_SEARCH.has(vegetable.id) ? ' 種' : ' 種 タキイ サカタ トキタ ナント'))}&tag=loadofagricul-22`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.amazonBtn}
+          onClick={e => e.stopPropagation()}
+        >
+          🛒 Amazonで種を探す
+        </a>
       </div>
     </Link>
   );
