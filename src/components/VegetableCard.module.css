@@ -141,3 +141,71 @@
   font-size: 12px;
   font-weight: 600;
 }
+
+/* スマホ3列対応：カードをコンパクトに */
+@media (max-width: 520px) {
+  .card {
+    padding-bottom: 8px;
+    border-radius: 10px;
+  }
+
+  .sakugataImg {
+    aspect-ratio: 16 / 10;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .avatarWrap {
+    aspect-ratio: 1 / 1;
+    min-height: unset;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .illustrationImg {
+    border-radius: 10px 10px 0 0;
+    padding: 4px;
+  }
+
+  .emoji {
+    font-size: 18px;
+  }
+
+  .name {
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .category {
+    display: none; /* 3列では省略 */
+  }
+
+  .months {
+    font-size: 10px;
+    line-height: 1.3;
+    width: 100%;
+    text-align: center;
+    word-break: break-all;
+  }
+
+  .cardBody {
+    gap: 2px;
+    padding: 0 4px;
+  }
+
+  .amazonBtn {
+    font-size: 9px;
+    padding: 3px 4px;
+    margin-top: 3px;
+    border-radius: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 1px 6px;
+  }
+}

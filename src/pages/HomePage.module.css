@@ -244,6 +244,48 @@
   margin-bottom: 32px;
 }
 
+/* ========== スマホ対応 ========== */
+@media (max-width: 520px) {
+  /* グリッド：3列固定 */
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  /* ヒーロー：月ボタンを小さく */
+  .hero {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .heroMonth {
+    font-size: 32px;
+  }
+
+  .monthTab {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+    border-radius: 6px;
+  }
+
+  .monthTabs {
+    gap: 3px;
+  }
+
+  /* サマリーバッジ：小さく */
+  .summaryBadge,
+  .showAllBtn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  /* 参考リンクグリッド：1列 */
+  .linkGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* 参考サイト */
 .refSection {
   border-top: 2px solid #e8f5e9;

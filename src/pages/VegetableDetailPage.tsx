@@ -5,6 +5,8 @@ import { vegetables } from '../data/vegetables';
 import { vegetableGuides } from '../data/vegetableGuides';
 import { cultivationData } from '../data/cultivationData';
 import { BeginnerGuideSection } from '../components/BeginnerGuideSection';
+import { cultivationLinks } from '../data/cultivationLinks';
+import { useSeo } from '../hooks/useSeo';
 import styles from './VegetableDetailPage.module.css';
 
 interface Props {
@@ -29,6 +31,15 @@ export function VegetableDetailPage({ region: _region }: Props) {
   const { id } = useParams<{ id: string }>();
   const veg = vegetables.find(v => v.id === id);
   const [unit, setUnit] = useState<'m2' | '10a'>('m2');
+
+  useSeo({
+    title: veg
+      ? `${veg.name}の種まき時期・栽培カレンダー｜地域別（関東・九州・東北）`
+      : '野菜 種まきカレンダー',
+    description: veg
+      ? `${veg.name}の種まき・定植・収穫時期を暖地・中間地・冷涼地の地域別で確認できます。施肥設計や栽培ポイントも掲載。`
+      : '野菜の種まきカレンダー',
+  });
 
   if (!veg) {
     return (
@@ -118,6 +129,31 @@ export function VegetableDetailPage({ region: _region }: Props) {
       {vegetableGuides[veg.id] && (
         <section className={styles.section}>
           <BeginnerGuideSection guide={vegetableGuides[veg.id]} />
+        </section>
+      )}
+
+      {cultivationLinks[veg.id] && (
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>📄 栽培資料・育て方ガイド</h2>
+          <div className={styles.linkList}>
+            {cultivationLinks[veg.id].map((link, i) => (
+              <a
+                key={i}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.cultivationLink}
+              >
+                <span className={styles.cultivationLinkIcon}>
+                  {link.type === 'pdf' ? '📋' : '🌐'}
+                </span>
+                <span className={styles.cultivationLinkBody}>
+                  <span className={styles.cultivationLinkTitle}>{link.title}</span>
+                  <span className={styles.cultivationLinkSource}>{link.source}</span>
+                </span>
+              </a>
+            ))}
+          </div>
         </section>
       )}
 

@@ -2,15 +2,23 @@ import { useState } from 'react';
 import { Region } from '../types';
 import { getVegetablesByMonth } from '../data/vegetables';
 import { VegetableCard } from '../components/VegetableCard';
+import { useSeo } from '../hooks/useSeo';
 import styles from './CalendarPage.module.css';
 
 interface Props {
   region: Region;
 }
 
+const MONTH_NAMES_JP = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+
 export function CalendarPage({ region }: Props) {
   const currentMonth = new Date().getMonth() + 1;
   const [selectedMonth, setSelectedMonth] = useState(currentMonth);
+
+  useSeo({
+    title: `${MONTH_NAMES_JP[selectedMonth - 1]}に種まきできる野菜一覧｜野菜 種まきカレンダー`,
+    description: `${MONTH_NAMES_JP[selectedMonth - 1]}に種まき・定植できる野菜を地域別（暖地・中間地・冷涼地）で一覧表示。収穫時期も確認できます。`,
+  });
 
   const sowingVegs = getVegetablesByMonth(selectedMonth, region, 'sowing');
   const plantingVegs = getVegetablesByMonth(selectedMonth, region, 'planting');
