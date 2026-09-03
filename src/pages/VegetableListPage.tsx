@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Region, VegetableCategory, CATEGORY_LABELS } from '../types';
-import { vegetables } from '../data/vegetables';
+import { vegetables, sortVegetablesByClassification } from '../data/vegetables';
 import { VegetableCard } from '../components/VegetableCard';
 import styles from './VegetableListPage.module.css';
 
@@ -12,11 +12,11 @@ export function VegetableListPage({ region }: Props) {
   const [selectedCategory, setSelectedCategory] = useState<VegetableCategory | 'all'>('all');
   const [search, setSearch] = useState('');
 
-  const filtered = vegetables.filter(v => {
+  const filtered = sortVegetablesByClassification(vegetables.filter(v => {
     const matchCategory = selectedCategory === 'all' || v.category === selectedCategory;
     const matchSearch = v.name.includes(search) || v.nameRoma.toLowerCase().includes(search.toLowerCase());
     return matchCategory && matchSearch;
-  });
+  }));
 
   return (
     <div className={styles.page}>

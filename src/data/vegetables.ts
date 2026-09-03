@@ -1161,12 +1161,24 @@ export const vegetables: Vegetable[] = [
   },
 ];
 
+const CLASSIFICATION_ORDER: Record<Vegetable['classification'], number> = {
+  '指定野菜': 0,
+  '特定野菜': 1,
+  'その他': 2,
+};
+
+export function sortVegetablesByClassification(items: Vegetable[]): Vegetable[] {
+  return [...items].sort((a, b) => {
+    return CLASSIFICATION_ORDER[a.classification] - CLASSIFICATION_ORDER[b.classification];
+  });
+}
+
 export function getVegetablesByMonth(month: number, region: import('../types').Region, type: 'sowing' | 'planting' | 'harvest'): Vegetable[] {
-  return vegetables.filter(v => {
+  return sortVegetablesByClassification(vegetables.filter(v => {
     const schedule = v.schedule[region];
     const ranges = schedule[type] ?? [];
     return ranges.some(r => isMonthInRange(month, r));
-  });
+  }));
 }
 
 function isMonthInRange(month: number, range: import('../types').MonthRange): boolean {

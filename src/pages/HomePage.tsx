@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useSeo } from '../hooks/useSeo';
 import { Region, REGION_LABELS } from '../types';
-import { vegetables, getVegetablesByMonth } from '../data/vegetables';
+import { vegetables, getVegetablesByMonth, sortVegetablesByClassification } from '../data/vegetables';
 import { VegetableCard } from '../components/VegetableCard';
 import { VegetableBanner } from '../components/VegetableBanner';
 import { RegionSelector } from '../components/RegionSelector';
@@ -72,12 +72,13 @@ export function HomePage({ region, onRegionChange }: Props) {
   // 種まき・定植の合算（重複除く）
   const tanemakiIds = new Set([...sowingIds, ...plantingIds]);
 
-  const filtered = vegetables
-    .filter(v => {
+  const filtered = sortVegetablesByClassification(
+    vegetables.filter(v => {
       if (seasonFilter === 'tanemaki' && !tanemakiIds.has(v.id)) return false;
       if (search && !v.name.includes(search) && !v.nameRoma.toLowerCase().includes(search.toLowerCase())) return false;
       return true;
-    });
+    })
+  );
 
   function getHighlight(id: string): 'sowing' | 'planting' | undefined {
     if (sowingIds.has(id)) return 'sowing';
