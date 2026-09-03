@@ -832,7 +832,7 @@ export const vegetables: Vegetable[] = [
   },
   {
     id: 'minori-endou',
-    name: '実エンドウ',
+    name: '実えんどう',
     nameRoma: 'Garden Pea',
     category: '豆類',
     classification: 'その他',

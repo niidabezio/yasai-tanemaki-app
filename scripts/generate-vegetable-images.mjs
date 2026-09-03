@@ -95,7 +95,7 @@ const VEGETABLES = [
   ['green-beans',     'インゲン'],
   ['snap-pea',        'スナップエンドウ'],
   ['sayaendou',       'サヤエンドウ'],
-  ['minori-endou',    '実エンドウ'],
+  ['minori-endou',    '実えんどう'],
   ['broad-bean',      'ソラマメ'],
   ['sweet-corn',      'トウモロコシ'],
   ['potato',          'じゃがいも'],

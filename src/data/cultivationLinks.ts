@@ -311,7 +311,7 @@ export const cultivationLinks: Record<string, CultivationLink[]> = {
     { title: '豆類 野菜栽培技術指針（PDF）', url: 'https://www.maff.go.jp/j/seisan/kankyo/hozen_type/h_sehi_kizyun/attach/pdf/aki3-20.pdf', source: '農林水産省', type: 'pdf' },
   ],
   'minori-endou': [
-    { title: 'タキイのエンドウ栽培マニュアル（実エンドウ含む）', url: 'https://www.takii.co.jp/tsk/manual/endou.html', source: 'タキイ種苗', type: 'web' },
+    { title: 'タキイのエンドウ栽培マニュアル（実えんどう含む）', url: 'https://www.takii.co.jp/tsk/manual/endou.html', source: 'タキイ種苗', type: 'web' },
     { title: 'タキイのエンドウ栽培マニュアル（PDF）', url: 'https://www.takii.co.jp/tsk/manual/pdf/endou.pdf', source: 'タキイ種苗', type: 'pdf' },
     { title: '豆類 野菜栽培技術指針（PDF）', url: 'https://www.maff.go.jp/j/seisan/kankyo/hozen_type/h_sehi_kizyun/attach/pdf/aki3-20.pdf', source: '農林水産省', type: 'pdf' },
   ],
