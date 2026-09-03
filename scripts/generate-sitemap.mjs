@@ -17,7 +17,7 @@ const vegetableIds = [
   'tomato', 'eggplant', 'cucumber', 'pepper', 'shishito', 'chili',
   'pumpkin', 'watermelon', 'melon', 'okra', 'zucchini', 'bittermelon',
   'shiroouri', 'togan', 'hayatouri', 'tsurumurasaki', 'morohiya',
-  'hakusai', 'cabbage', 'lettuce', 'green-lettuce', 'saladana',
+  'hakusai', 'cabbage', 'lettuce', 'green-lettuce',
   'spinach', 'komatsuna', 'mizuna', 'chingensai', 'broccoli',
   'cauliflower', 'shungiku', 'nozawana', 'celery', 'parsley',
   'asparagus-green', 'white-asparagus', 'udo', 'eisai', 'kale',
@@ -37,7 +37,7 @@ const urls = [
   { loc: `${SITE_URL}/`, priority: '1.0', changefreq: 'weekly' },
   // カレンダーページ
   { loc: `${SITE_URL}/calendar`, priority: '0.8', changefreq: 'weekly' },
-  // 野菜個別ページ（74種）
+  // 野菜個別ページ（73種）
   ...vegetableIds.map(id => ({
     loc: `${SITE_URL}/vegetable/${id}`,
     priority: '0.7',

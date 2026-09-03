@@ -170,13 +170,6 @@ export const cultivationData: Record<string, CultivationInfo> = {
     baseFertilizer: '完熟堆肥2,000g/m²・苦土石灰100g/m²・ようりん40g/m²・高度化成（14-14-14）60〜80g/m² 【チッソ10〜12・リンサン10〜12・カリ10〜12 g/m²】',
     topDressing: '定植2週後にチッソ成分1g/m²を1〜2回',
   },
-  saladana: {
-    ph: '6.0〜7.0',
-    spacing: '20〜25cm',
-    rowSpacing: '30〜40cm',
-    baseFertilizer: '完熟堆肥2,000g/m²・苦土石灰100g/m²・ようりん40g/m²・高度化成（14-14-14）60〜80g/m² 【チッソ10〜12・リンサン10〜12・カリ10〜12 g/m²】',
-    topDressing: '定植2週後にチッソ成分1g/m²を1〜2回',
-  },
   spinach: {
     ph: '6.5〜7.0（酸性を極端に嫌う）',
     spacing: '筋まき（播種間隔3〜5cm）',

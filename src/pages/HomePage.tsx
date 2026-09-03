@@ -29,7 +29,7 @@ const REFERENCE_SITES = [
 export function HomePage({ region, onRegionChange }: Props) {
   useSeo({
     title: '野菜 種まきカレンダー｜月別・地域別の種まき・定植・収穫時期一覧',
-    description: '74種類の野菜の種まき・定植・収穫時期を、暖地（九州・四国）・中間地（関東・東海）・冷涼地（東北・北海道）の地域別で確認できる無料カレンダーサイトです。',
+    description: '73種類の野菜の種まき・定植・収穫時期を、暖地（九州・四国）・中間地（関東・東海）・冷涼地（東北・北海道）の地域別で確認できる無料カレンダーサイトです。',
   });
 
   const today = new Date();

@@ -4,7 +4,7 @@ const EMOJI_MAP: Record<string, string> = {
   'chili':'🌶️','pumpkin':'🎃','watermelon':'🍉','melon':'🍈','okra':'🌿',
   'zucchini':'🥒','bittermelon':'🥒','shiroouri':'🥒','togan':'🥬','hayatouri':'🥒',
   'tsurumurasaki':'🌿','morohiya':'🌿','strawberry':'🍓','hakusai':'🥬','cabbage':'🥬',
-  'lettuce':'🥬','green-lettuce':'🥬','saladana':'🥬','spinach':'🥬','komatsuna':'🥬',
+  'lettuce':'🥬','green-lettuce':'🥬','spinach':'🥬','komatsuna':'🥬',
   'mizuna':'🥬','chingensai':'🥬','broccoli':'🥦','cauliflower':'🥦','shungiku':'🌼',
   'nozawana':'🥬','celery':'🌿','parsley':'🌿','asparagus-green':'🌱','white-asparagus':'🌱',
   'udo':'🌿','eisai':'🌿','kale':'🥬','takana':'🥬','coriander':'🌿','leaf-shiso':'🍃',

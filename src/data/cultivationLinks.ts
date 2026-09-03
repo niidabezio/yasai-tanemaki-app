@@ -134,10 +134,6 @@ export const cultivationLinks: Record<string, CultivationLink[]> = {
     { title: 'リーフレタス栽培方法｜JAあいち尾東', url: 'https://kateisaien-jaab.jp/cultivation/leaf_lettuce/', source: 'JAあいち尾東', type: 'web' },
     { title: 'タキイのレタス栽培マニュアル（リーフレタス含む）', url: 'https://www.takii.co.jp/tsk/manual/retasu.html', source: 'タキイ種苗', type: 'web' },
   ],
-  saladana: [
-    { title: 'タキイのレタス栽培マニュアル（サラダ菜含む）', url: 'https://www.takii.co.jp/tsk/manual/retasu.html', source: 'タキイ種苗', type: 'web' },
-    { title: 'サラダ菜｜JA全農ふくれん', url: 'https://zennoh-fukuren.jp/consumer/vegetables/saradana', source: 'JA全農ふくれん', type: 'web' },
-  ],
   spinach: [
     { title: 'ホウレンソウ栽培マニュアル', url: 'https://www.takii.co.jp/tsk/manual/hourensou.html', source: 'タキイ種苗', type: 'web' },
     { title: 'ホウレンソウ栽培マニュアル（PDF）', url: 'https://www.takii.co.jp/tsk/manual/pdf/hourensou.pdf', source: 'タキイ種苗', type: 'pdf' },

@@ -334,21 +334,6 @@ export const vegetables: Vegetable[] = [
     },
   },
   {
-    id: 'saladana',
-    name: 'サラダナ',
-    nameRoma: 'Salad Greens',
-    category: '葉菜',
-    classification: 'その他',
-    difficulty: 1,
-    daysToHarvest: '45〜60日',
-    image: 'sakugata/作型レタス_非結球レタス.png',
-    schedule: {
-      warm:   { sowing: [{start:1,end:4},{start:8,end:12}], harvest: [{start:4,end:6},{start:11,end:12}] },
-      middle: { sowing: [{start:1,end:4},{start:8,end:12}], harvest: [{start:5,end:6},{start:10,end:11}] },
-      cold:   { sowing: [{start:3,end:9}], harvest: [{start:6,end:8}] },
-    },
-  },
-  {
     id: 'spinach',
     name: 'ホウレンソウ',
     nameRoma: 'Spinach',
