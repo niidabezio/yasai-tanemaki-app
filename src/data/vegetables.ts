@@ -319,13 +319,14 @@ export const vegetables: Vegetable[] = [
   },
   {
     id: 'green-lettuce',
-    name: '緑レタス',
-    nameRoma: 'Green Lettuce',
+    name: 'リーフレタス',
+    nameRoma: 'Leaf Lettuce',
     category: '葉菜',
     classification: 'その他',
     difficulty: 1,
     daysToHarvest: '50〜70日',
     image: 'sakugata/作型レタス_非結球レタス.png',
+    illustration: 'vegetables/leaf-lettuce.png',
     schedule: {
       warm:   { sowing: [{start:1,end:4},{start:8,end:12}], harvest: [{start:4,end:6},{start:10,end:12}] },
       middle: { sowing: [{start:1,end:4},{start:8,end:12}], harvest: [{start:5,end:6},{start:10,end:11}] },
@@ -645,8 +646,8 @@ export const vegetables: Vegetable[] = [
     notes: '直根のため移植不可。深くよく耕した土地に種まきを。',
     image: 'sakugata/作型ダイコン.png',
     schedule: {
-      warm:   { sowing: [{start:1,end:5},{start:7,end:8}], harvest: [{start:5,end:6},{start:11,end:1}] },
-      middle: { sowing: [{start:1,end:5},{start:7,end:8}], harvest: [{start:5,end:6},{start:11,end:12}] },
+      warm:   { sowing: [{start:3,end:4},{start:8,end:10}], harvest: [{start:5,end:6},{start:11,end:1}] },
+      middle: { sowing: [{start:3,end:4},{start:8,end:9}], harvest: [{start:5,end:6},{start:11,end:12}] },
       cold:   { sowing: [{start:4,end:5},{start:7,end:8}], harvest: [{start:6,end:7},{start:10,end:11}] },
     },
   },
